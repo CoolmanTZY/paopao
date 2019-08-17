@@ -1,22 +1,14 @@
 <view class="home-page">
   <!-- 搜素框 -->
-  <view class="search">
-    <view class="search-input">
-      <icon type="search" size="13"/>
-    </view>
-  </view>
-
+  <search/>
   <!-- 轮播图 -->
-  <swiper indicator-dots
-  autoplay  indicator-color='rgba(255,255,255,0.7)' indicator-active-color='rgba(255,0,0,1)'>
-  <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
-    <swiper-item item-id='height:100%'>
-      <image mode="widthFix" 
-      src="{{item.image_src}}" 
-      class="slide-image" width="355" height="150"/>
-    </swiper-item>
-  </block>
-</swiper>
+  <swiper class="swiper" indicator-dots autoplay indicator-color='rgba(255,255,255,0.7)' indicator-active-color='rgba(255,0,0,1)'>
+    <block class='block' wx:for="{{imgUrls}}" wx:key='{{index}}'>
+      <swiper-item item-id='height:100%'>
+        <image mode="widthFix" src="{{item.image_src}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
 
   <!-- 导航栏 -->
   <view class="catitems">
@@ -29,19 +21,19 @@
   <view class="floordata" wx:for='{{floordata}}' wx:key='{{index}}'>
     <!-- 标题 -->
     <view class="floor-title">
-      <image  src="{{item.floor_title.image_src}}"></image>
+      <image src="{{item.floor_title.image_src}}"></image>
     </view>
     <!-- 内容 -->
     <view class="floor-content">
-    <!-- 左侧 -->
+      <!-- 左侧 -->
       <view class="floor-cnt-left">
-        <image  src="{{item.product_list[0].image_src}}"></image>
+        <image src="{{item.product_list[0].image_src}}"></image>
       </view>
       <!-- 右侧 -->
       <view class="floor-cnt-right">
-        <image wx:for='{{item.product_list}}' wx:key='{{index}}'
-        wx:if='{{index>0}}' src="{{item.image_src}}"></image>
+        <image wx:for='{{item.product_list}}' wx:key='{{index}}' wx:if='{{index>0}}' src="{{item.image_src}}"></image>
       </view>
     </view>
   </view>
+  
 </view>

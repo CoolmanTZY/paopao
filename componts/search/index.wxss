@@ -1,0 +1,20 @@
+/* 搜素框 */
+.search{
+  padding:0 35rpx 8rpx;
+  width: 750rpx;
+  background: #ff2d4a;
+  position: fixed;
+  top:0rpx;
+  left: 0;
+  z-index: 5;
+}
+.search .search-input{
+  height: 60rpx;
+  width: 680rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 3px;
+  background: #fff;
+  color: black;
+}

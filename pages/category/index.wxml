@@ -1,2 +1,33 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="home-page">
+  <search/>
+  <!-- 分类 -->
+  <view class="categories">
+    <!-- 左侧 -->
+    <view class='navs'>
+      <view class="navs-item {{active==index?'active':''}}" wx:for="{{categoriesList}}" wx:key="{{index}}" bindtap="handleClick" data-index="{{index}}">
+        {{item.cat_name}}
+      </view>
+    </view>
+    <!-- 右侧 -->
+    <view class="categories-right" >
+
+      <view class="categories-row" wx:for='{{categoriesList[active].children}}' wx:key='{{index}}'>
+        <!-- 右侧标题 -->
+      <view class="categorys-title">
+        <text>/</text> 
+        {{item.cat_name}}
+        <text>/</text>
+      </view>
+
+      <!-- 右侧内容 -->
+      <view class="categorys-list">
+        <view class="categorys-item" wx:for="{{item.children}}" wx:key='{{index}}'> 
+          <image src="{{item.cat_icon}}" mode="aspectFill"></image>
+          <view class="categorys-list-text">{{item.cat_name}}</view>
+        </view>
+      </view>
+
+      </view>
+    </view>
+  </view>
+</view>
