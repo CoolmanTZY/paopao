@@ -1,0 +1,26 @@
+<view class="goods">
+  <!-- 搜素框 -->
+  <search/>
+  <!-- tab栏 -->
+  <view class="tab">
+    <view class="tab-item {{current==index?'red':''}}" wx:for="{{tabList}}" bindtap="switcher" data-index="{{index}}" wx:key='{{index}}'>{{item}}</view>
+  </view>
+  <!-- 商品 -->
+  <view class="shopping" wx:for='{{goods}}' wx:key='{{index}}'>
+  <!-- ////////// -->
+    
+    <!-- 左侧图片 -->
+    <view class='shopping-img'>
+      <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
+    </view>
+    <!-- 右侧内容 -->
+    <view class="shopping-text">
+      <view class="text">{{item.goods_name}}</view>
+      <view class="price">
+        ￥
+        <text>{{item.goods_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer">{{ add ? '加载更多' : '我也是有底线的' }}</view>
