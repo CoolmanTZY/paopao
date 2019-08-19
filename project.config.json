@@ -40,13 +40,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "dev",
-					"pathName": "pages/category/index",
-					"query": "",
+					"id": 0,
+					"name": "pages/goods_detail/index",
+					"pathName": "pages/goods_detail/index",
+					"query": "id=57224",
 					"scene": null
 				},
 				{
